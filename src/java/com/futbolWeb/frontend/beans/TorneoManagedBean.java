@@ -12,53 +12,21 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import javax.faces.view.ViewScoped;
+
 
 /**
  *
  * @author camila
  */
 @Named(value = "torneoManagedBean")
-@ViewScoped
-public class TorneoManagedBean implements Serializable, InterfaceController<Torneo> {
+@RequestScoped
+public class TorneoManagedBean implements Serializable{
 
-    private Torneo torneo;
-    @EJB
-    private TorneoFacadeLocal torneofl;
-
+    
+  
     public TorneoManagedBean() {
     }
 
-    @PostConstruct
-    public void init() {
-
-        torneo = new Torneo();
-
-    }
-
-    public Torneo getTorneo() {
-        return torneo;
-    }
-
-    public void setTorneo(Torneo torneo) {
-        this.torneo = torneo;
-    }
-
-    public void registrarTorneo() {
-
-        torneofl.create(torneo);
-
-    }
-
-    public List<Torneo> listarTorneo() {
-
-        return torneofl.findAll();
-
-    }
-
-    @Override
-    public Torneo getObjectByKey(Integer key) {
-        return torneofl.find(key);
-    }
 }
