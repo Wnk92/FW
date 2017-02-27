@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.futbolweb.backend.persistens.facades;
+package com.futbolWeb.backend.persistens.facades;
 
 import com.futbolWeb.backend.persistence.entities.EncuentroTorneo;
 import java.util.List;

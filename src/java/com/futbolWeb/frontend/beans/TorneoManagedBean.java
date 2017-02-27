@@ -6,7 +6,7 @@
 package com.futbolweb.frontend.beans;
 
 import com.futbolWeb.backend.persistence.entities.Torneo;
-import com.futbolweb.backend.persistens.facades.TorneoFacadeLocal;
+import com.futbolWeb.backend.persistens.facades.TorneoFacadeLocal;
 import com.futbolWeb.frontend.utilities.converters.InterfaceController;
 import java.io.Serializable;
 import java.util.List;
@@ -19,15 +19,15 @@ import javax.faces.view.ViewScoped;
  *
  * @author camila
  */
-@Named(value = "torneoController")
+@Named(value = "torneoManagedBean")
 @ViewScoped
-public class TorneoController implements Serializable, InterfaceController<Torneo> {
+public class TorneoManagedBean implements Serializable, InterfaceController<Torneo> {
 
     private Torneo torneo;
     @EJB
     private TorneoFacadeLocal torneofl;
 
-    public TorneoController() {
+    public TorneoManagedBean() {
     }
 
     @PostConstruct
